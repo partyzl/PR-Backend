@@ -10,7 +10,7 @@ class User(models.Model):
 
 class Connection(models.Model):
     user1 = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
-    user2 = models.CharField(User, on_delete=models.SET_NULL, null=True)
+    user2 = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
     isPending = models.BooleanField()
     messages = models.TextField()
 
